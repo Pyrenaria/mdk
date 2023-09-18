@@ -1,0 +1,106 @@
+﻿<Page x:Class="FirstAppFokina.Pages.PagePR1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FirstAppFokina.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PagePR1">
+
+    <Grid Background="#D7C7D7">
+
+        <StackPanel Orientation="Vertical"
+            VerticalAlignment="Center">
+
+            <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                Margin="4" Width="277">
+
+                <TextBlock Text="Введите значение X:"
+                        Margin="4, 10, 10, 0" FontFamily="Century Gothic"/>
+
+                <TextBox x:Name="meanX"
+                        Height="20" Width="130" Margin="10"
+                        FontSize="13" FontFamily="Century Gothic"
+                        BorderThickness="2"
+                        BorderBrush="#3A2D3A"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="4" Width="277">
+
+                <TextBlock Text="Введите значение Y:"
+                        Margin="4, 10, 10, 0" FontFamily="Century Gothic"/>
+
+                <TextBox x:Name="meanY"
+                        Height="20" Width="130" Margin="10"
+                        FontSize="13" FontFamily="Century Gothic"
+                        BorderThickness="2"
+                        BorderBrush="#3A2D3A"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="4" Width="277">
+
+                <TextBlock Text="Введите значение Z:"
+                        Margin="4, 10, 10, 0" FontFamily="Century Gothic" Width="121"/>
+
+                <TextBox x:Name="meanZ"
+                         Height="20" Margin="10" Width="130"
+                         FontSize="13" FontFamily="Century Gothic"
+                         BorderThickness="2"
+                         BorderBrush="#3A2D3A"/>
+
+            </StackPanel>
+
+
+
+            <StackPanel Width="268" Height="120">
+
+                <TextBlock Text="Результат"  
+                        FontFamily="Century Gothic" 
+                        Background="#D7C7D7"
+                        Margin="0, 0, 0, 5"/>
+
+                <ListBox Name="LstResult" Height="100" Width="267"/>
+
+            </StackPanel>
+
+
+
+            <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="4" Width="175" Height="40">
+
+                <Button x:Name="clear1" 
+                        Style="{StaticResource StyleBtn}" 
+                        FontSize="13" Height="24" Width="80"
+                        Margin="8, 8, 3, 8"
+                        Content="Очистить" 
+                        Click="clear1_Click"/>
+
+                <Button x:Name="Perfom"
+                    Height="24" Width="80"
+                    Content="Выполнить"
+                    Margin="3, 8, 8, 8" FontSize="13"
+                    Style="{StaticResource StyleBtn}" 
+                    Click="Perfom_Click"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom">
+            <Button x:Name="next1" 
+                    Content="&#707;&#707;" Width="33"
+                    FontSize="13" Margin="20, 20, 10, 30"
+                    Style="{StaticResource StyleBtn}" 
+                    Click="next1_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Page>
