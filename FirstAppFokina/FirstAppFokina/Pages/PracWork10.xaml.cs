@@ -104,7 +104,7 @@ namespace FirstAppFokina.Pages
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-
+            Classes.ClassFrame.frmObj.Navigate(new PagePR2());
         }
     }
 }

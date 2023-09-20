@@ -1,0 +1,109 @@
+﻿<Page x:Class="FirstAppFokina.Pages.PagePR2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FirstAppFokina.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PagePR2">
+
+    <Grid Background="#D7C7D7">
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+
+            <StackPanel  Orientation="Vertical"
+                         VerticalAlignment="Top" Height="88" Margin="11">
+
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                    <TextBlock Text="Введите значение X" 
+                               FontFamily="Century Gothic"
+                               Margin="11" FontSize="13"/>
+                    <TextBox Name="txtX" Margin="11" Width="100"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center">
+
+                    <TextBlock Text="Введите значение Y" 
+                               FontFamily="Century Gothic"
+                               Margin="11" FontSize="13"/>
+                    <TextBox Name="txtY" Margin="11" Width="100"/>
+
+                </StackPanel>
+
+
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical"
+                            VerticalAlignment="Top"
+                            Margin="11" Height="111">
+                <RadioButton GroupName="Function" 
+                                 Name="rbtSinh"
+                                 Content="Sinh(x)" FontSize="13"
+                                 IsChecked="True"
+                                 Margin="11"/>
+                <RadioButton GroupName="Function" 
+                                 Name="rbtSqr" FontSize="13"
+                                 Content="х²"
+                                 Margin="11"/>
+                <RadioButton GroupName="Function" 
+                                 Name="rbtExp" FontSize="13"
+                                 Content="Exp(x)"
+                                 Margin="11"/>
+            </StackPanel>
+        </StackPanel>
+
+
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Результат выполнения программы:"
+                       FontFamily="Century Gothic"
+                       FontSize="13"
+                       Margin="11"/>
+            <ListBox Name="lstResult" Margin="11" Width="350"
+                     Height="150" FontFamily="Century Gothic"/>
+        </StackPanel>
+
+        <DockPanel 
+                   HorizontalAlignment="Center" VerticalAlignment="Top" Height="71" Margin="0,369,0,0">
+            
+            <Button x:Name="Backk" Content="&#706;&#706;" Width="33"
+                FontSize="13" 
+                Style="{StaticResource StyleBtn}"
+                FontFamily="Century Gothic"
+                Click="Backk_Click"/>
+            
+            <Button Name="btnCalc" Height="40" 
+                    Width="110"
+                    Content="Выполнить" Margin="10"
+                    Click="btnCalc_Click"
+                    Style="{StaticResource StyleBtn}"
+                    FontFamily="Century Gothic"
+                    FontSize="13"/>
+
+            <Button Name="btnClear" Height="40" 
+                    Width="110" FontSize="13"
+                    Content="Очистить" Margin="10"
+                    Click="btnClear_Click" 
+                    Style="{StaticResource StyleBtn}"
+                    FontFamily="Century Gothic"/>
+            <Button x:Name="Next" Content="&#707;&#707;"
+                    Width="33"
+                    FontSize="13"
+                    Style="{StaticResource StyleBtn}"
+                    FontFamily="Century Gothic"
+                    Click="Next_Click"/>
+
+
+
+
+        </DockPanel>
+
+        
+
+    </Grid>
+</Page>

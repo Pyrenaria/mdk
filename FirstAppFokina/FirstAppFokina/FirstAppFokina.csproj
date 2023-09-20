@@ -72,6 +72,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PagePR2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PagePR3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PracWork10.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,6 +88,12 @@
   <ItemGroup>
     <Compile Include="Pages\PagePR1.xaml.cs">
       <DependentUpon>PagePR1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagePR2.xaml.cs">
+      <DependentUpon>PagePR2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagePR3.xaml.cs">
+      <DependentUpon>PagePR3.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PracWork10.xaml.cs">
       <DependentUpon>PracWork10.xaml</DependentUpon>
