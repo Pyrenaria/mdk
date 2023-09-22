@@ -10,96 +10,109 @@
 
     <Grid Background="#D7C7D7">
 
-        <StackPanel Orientation="Vertical"
-            VerticalAlignment="Center">
+        <StackPanel>
 
-            <StackPanel Orientation="Horizontal"
-                HorizontalAlignment="Center"
-                Margin="4" Width="277">
+            <StackPanel Orientation="Vertical">
 
-                <TextBlock Text="Введите значение X:"
-                        Margin="4, 10, 10, 0" FontFamily="Century Gothic"/>
+                <StackPanel Orientation="Horizontal">
 
-                <TextBox x:Name="meanX"
-                        Height="20" Width="130" Margin="10"
-                        FontSize="13" FontFamily="Century Gothic"
-                        BorderThickness="2"
-                        BorderBrush="#3A2D3A"/>
+                    <Button x:Name="next1" 
+                        Content="&#707;&#707;" Width="33"
+                        FontSize="13" Margin="20, 5, 20, 5"
+                        Style="{StaticResource StyleBtn}" 
+                        Click="next1_Click"/>
+
+                    <TextBlock Text="Практическая работа №1" FontSize="25"
+                               FontFamily="Century Gothic" Margin="5"/>
+
+                </StackPanel>
+
+                <Separator Background="#3A2D3A"></Separator>
+            
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Center"
-                        Margin="4" Width="277">
+            <StackPanel Orientation="Vertical"
+                VerticalAlignment="Center" Margin="40">
 
-                <TextBlock Text="Введите значение Y:"
-                        Margin="4, 10, 10, 0" FontFamily="Century Gothic"/>
-
-                <TextBox x:Name="meanY"
-                        Height="20" Width="130" Margin="10"
-                        FontSize="13" FontFamily="Century Gothic"
-                        BorderThickness="2"
-                        BorderBrush="#3A2D3A"/>
-
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal"
+                <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     Margin="4" Width="277">
 
-                <TextBlock Text="Введите значение Z:"
-                        Margin="4, 10, 10, 0" FontFamily="Century Gothic" Width="121"/>
+                    <TextBlock Text="Введите значение X:"
+                            Margin="4, 10, 10, 0" FontFamily="Century Gothic"/>
 
-                <TextBox x:Name="meanZ"
-                         Height="20" Margin="10" Width="130"
-                         FontSize="13" FontFamily="Century Gothic"
-                         BorderThickness="2"
-                         BorderBrush="#3A2D3A"/>
+                    <TextBox x:Name="meanX"
+                            Height="20" Width="130" Margin="10"
+                            FontSize="13" FontFamily="Century Gothic"
+                            BorderThickness="2"
+                            BorderBrush="#3A2D3A"/>
+                </StackPanel>
 
-            </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="4" Width="277">
+
+                    <TextBlock Text="Введите значение Y:"
+                            Margin="4, 10, 10, 0" FontFamily="Century Gothic"/>
+
+                    <TextBox x:Name="meanY"
+                            Height="20" Width="130" Margin="10"
+                            FontSize="13" FontFamily="Century Gothic"
+                            BorderThickness="2"
+                            BorderBrush="#3A2D3A"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="4" Width="277">
+
+                    <TextBlock Text="Введите значение Z:"
+                            Margin="4, 10, 10, 0" FontFamily="Century Gothic" Width="121"/>
+
+                    <TextBox x:Name="meanZ"
+                             Height="20" Margin="10" Width="130"
+                             FontSize="13" FontFamily="Century Gothic"
+                             BorderThickness="2"
+                             BorderBrush="#3A2D3A"/>
+
+                </StackPanel>
 
 
 
-            <StackPanel Width="268" Height="120">
+                <StackPanel Width="268" Height="120">
 
-                <TextBlock Text="Результат"  
-                        FontFamily="Century Gothic" 
-                        Background="#D7C7D7"
-                        Margin="0, 0, 0, 5"/>
+                    <TextBlock Text="Результат"  
+                            FontFamily="Century Gothic" 
+                            Background="#D7C7D7"
+                            Margin="0, 0, 0, 5"/>
 
-                <ListBox Name="LstResult" Height="100" Width="267"/>
+                    <ListBox Name="LstResult" Height="100" Width="267"/>
 
-            </StackPanel>
+                </StackPanel>
 
 
 
-            <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    Margin="4" Width="175" Height="40">
+                <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="4" Width="175" Height="40">
 
-                <Button x:Name="clear1" 
+                    <Button x:Name="clear1" 
+                            Style="{StaticResource StyleBtn}" 
+                            FontSize="13" Height="24" Width="80"
+                            Margin="8, 8, 3, 8"
+                            Content="Очистить" 
+                            Click="clear1_Click"/>
+
+                    <Button x:Name="Perfom"
+                        Height="24" Width="80"
+                        Content="Выполнить"
+                        Margin="3, 8, 8, 8" FontSize="13"
                         Style="{StaticResource StyleBtn}" 
-                        FontSize="13" Height="24" Width="80"
-                        Margin="8, 8, 3, 8"
-                        Content="Очистить" 
-                        Click="clear1_Click"/>
+                        Click="Perfom_Click"/>
+                </StackPanel>
 
-                <Button x:Name="Perfom"
-                    Height="24" Width="80"
-                    Content="Выполнить"
-                    Margin="3, 8, 8, 8" FontSize="13"
-                    Style="{StaticResource StyleBtn}" 
-                    Click="Perfom_Click"/>
             </StackPanel>
-
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom">
-            <Button x:Name="next1" 
-                    Content="&#707;&#707;" Width="33"
-                    FontSize="13" Margin="20, 20, 10, 30"
-                    Style="{StaticResource StyleBtn}" 
-                    Click="next1_Click"/>
         </StackPanel>
 
     </Grid>

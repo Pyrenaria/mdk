@@ -9,101 +9,116 @@
       Title="PagePR2">
 
     <Grid Background="#D7C7D7">
-        <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Center">
+        <StackPanel>
 
-            <StackPanel  Orientation="Vertical"
-                         VerticalAlignment="Top" Height="88" Margin="11">
+            <StackPanel Orientation="Vertical">
+            
+                <StackPanel Orientation="Horizontal">
 
-                <StackPanel Orientation="Horizontal" 
-                            HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Button x:Name="Backk" Content="&#706;&#706;" Width="33"
+                        FontSize="13" Margin="20, 5, 5, 5"
+                        Style="{StaticResource StyleBtn}"
+                        FontFamily="Century Gothic"
+                        Click="Backk_Click"/>
 
-                    <TextBlock Text="Введите значение X" 
-                               FontFamily="Century Gothic"
-                               Margin="11" FontSize="13"/>
-                    <TextBox Name="txtX" Margin="11" Width="100"/>
+                    <Button x:Name="Next" Content="&#707;&#707;"
+                        Width="33" Margin="5, 5, 20, 5"
+                        FontSize="13"
+                        Style="{StaticResource StyleBtn}"
+                        FontFamily="Century Gothic"
+                        Click="Next_Click"/>
+                    
+                    
+
+                    <TextBlock Text="Практическая работа №2" FontSize="25"
+                               FontFamily="Century Gothic" Margin="5"/>
 
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" 
-                            HorizontalAlignment="Center">
-
-                    <TextBlock Text="Введите значение Y" 
-                               FontFamily="Century Gothic"
-                               Margin="11" FontSize="13"/>
-                    <TextBox Name="txtY" Margin="11" Width="100"/>
-
-                </StackPanel>
-
-
+                <Separator Background="#3A2D3A"></Separator>
             </StackPanel>
-
-            <StackPanel Orientation="Vertical"
-                            VerticalAlignment="Top"
-                            Margin="11" Height="111">
-                <RadioButton GroupName="Function" 
-                                 Name="rbtSinh"
-                                 Content="Sinh(x)" FontSize="13"
-                                 IsChecked="True"
-                                 Margin="11"/>
-                <RadioButton GroupName="Function" 
-                                 Name="rbtSqr" FontSize="13"
-                                 Content="х²"
-                                 Margin="11"/>
-                <RadioButton GroupName="Function" 
-                                 Name="rbtExp" FontSize="13"
-                                 Content="Exp(x)"
-                                 Margin="11"/>
-            </StackPanel>
-        </StackPanel>
-
-
-        <StackPanel Orientation="Vertical"
-                    HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Результат выполнения программы:"
-                       FontFamily="Century Gothic"
-                       FontSize="13"
-                       Margin="11"/>
-            <ListBox Name="lstResult" Margin="11" Width="350"
-                     Height="150" FontFamily="Century Gothic"/>
-        </StackPanel>
-
-        <DockPanel 
-                   HorizontalAlignment="Center" VerticalAlignment="Top" Height="71" Margin="0,369,0,0">
-            
-            <Button x:Name="Backk" Content="&#706;&#706;" Width="33"
-                FontSize="13" 
-                Style="{StaticResource StyleBtn}"
-                FontFamily="Century Gothic"
-                Click="Backk_Click"/>
-            
-            <Button Name="btnCalc" Height="40" 
-                    Width="110"
-                    Content="Выполнить" Margin="10"
-                    Click="btnCalc_Click"
-                    Style="{StaticResource StyleBtn}"
-                    FontFamily="Century Gothic"
-                    FontSize="13"/>
-
-            <Button Name="btnClear" Height="40" 
-                    Width="110" FontSize="13"
-                    Content="Очистить" Margin="10"
-                    Click="btnClear_Click" 
-                    Style="{StaticResource StyleBtn}"
-                    FontFamily="Century Gothic"/>
-            <Button x:Name="Next" Content="&#707;&#707;"
-                    Width="33"
-                    FontSize="13"
-                    Style="{StaticResource StyleBtn}"
-                    FontFamily="Century Gothic"
-                    Click="Next_Click"/>
-
-
-
-
-        </DockPanel>
-
         
+        
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center" Margin="0, 10, 0,0">
 
+                <StackPanel  Orientation="Vertical"
+                             VerticalAlignment="Top" Height="88" Margin="11">
+
+                    <StackPanel Orientation="Horizontal" 
+                                HorizontalAlignment="Center" VerticalAlignment="Top">
+
+                        <TextBlock Text="Введите значение X" 
+                                   FontFamily="Century Gothic"
+                                   Margin="11" FontSize="13"/>
+                        <TextBox Name="txtX" Margin="11" Width="100"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" 
+                                HorizontalAlignment="Center">
+
+                        <TextBlock Text="Введите значение Y" 
+                                   FontFamily="Century Gothic"
+                                   Margin="11" FontSize="13"/>
+                        <TextBox Name="txtY" Margin="11" Width="100"/>
+
+                    </StackPanel>
+
+
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical"
+                                VerticalAlignment="Top"
+                                Margin="11" Height="111">
+                    <RadioButton GroupName="Function" 
+                                     Name="rbtSinh"
+                                     Content="Sinh(x)" FontSize="13"
+                                     IsChecked="True"
+                                     Margin="11"/>
+                    <RadioButton GroupName="Function" 
+                                     Name="rbtSqr" FontSize="13"
+                                     Content="х²"
+                                     Margin="11"/>
+                    <RadioButton GroupName="Function" 
+                                     Name="rbtExp" FontSize="13"
+                                     Content="Exp(x)"
+                                     Margin="11"/>
+                </StackPanel>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Vertical" Margin="0"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Результат выполнения программы:"
+                           FontFamily="Century Gothic"
+                           FontSize="13"
+                           Margin="11"/>
+                <ListBox Name="lstResult" Margin="11" Width="350"
+                         Height="150" FontFamily="Century Gothic"/>
+            </StackPanel>
+
+            <DockPanel  Margin="0"
+                       HorizontalAlignment="Center" VerticalAlignment="Top" Height="71" >
+
+
+                <Button Name="btnCalc" 
+                        Content="Выполнить" Margin="10"
+                        Click="btnCalc_Click"
+                        Style="{StaticResource StyleBtn}"
+                        FontFamily="Century Gothic"
+                        FontSize="13"/>
+
+                <Button Name="btnClear"  FontSize="13"
+                        Content="Очистить" Margin="10"
+                        Click="btnClear_Click" 
+                        Style="{StaticResource StyleBtn}"
+                        FontFamily="Century Gothic"/>
+
+
+            </DockPanel>
+
+
+        </StackPanel>
     </Grid>
 </Page>

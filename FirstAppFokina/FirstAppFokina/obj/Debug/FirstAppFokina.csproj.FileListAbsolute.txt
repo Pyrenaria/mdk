@@ -58,3 +58,5 @@ D:\ИСП212\FirstAppFokina\FirstAppFokina\obj\Debug\Pages\PagePR2.g.cs
 D:\ИСП212\FirstAppFokina\FirstAppFokina\obj\Debug\Pages\PagePR2.baml
 D:\ИСП212\FirstAppFokina\FirstAppFokina\obj\Debug\Pages\PagePR3.g.cs
 D:\ИСП212\FirstAppFokina\FirstAppFokina\obj\Debug\Pages\PagePR3.baml
+D:\ИСП212\FirstAppFokina\FirstAppFokina\obj\Debug\Pages\PagePR7.g.cs
+D:\ИСП212\FirstAppFokina\FirstAppFokina\obj\Debug\Pages\PagePR7.baml

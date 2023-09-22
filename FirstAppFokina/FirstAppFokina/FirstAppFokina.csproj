@@ -80,6 +80,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PagePR7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PracWork10.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -94,6 +98,9 @@
     </Compile>
     <Compile Include="Pages\PagePR3.xaml.cs">
       <DependentUpon>PagePR3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagePR7.xaml.cs">
+      <DependentUpon>PagePR7.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PracWork10.xaml.cs">
       <DependentUpon>PracWork10.xaml</DependentUpon>
@@ -123,6 +130,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\form.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

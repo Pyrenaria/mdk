@@ -9,114 +9,128 @@
       Title="PagePR3">
 
     <Grid Background="#D7C7D7">
-        
-        <StackPanel Orientation="Vertical"
-                    VerticalAlignment="Center" Margin="210,0,210,0" > 
 
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Left"
-                        Margin="4" Width="277">
+        <StackPanel>
+            <StackPanel Orientation="Vertical">
 
-                <TextBlock Text="X0 = "
-                           Margin="4, 10, 10, 0" 
-                           FontFamily="Century Gothic"/>
+                <StackPanel Orientation="Horizontal">
 
-                <TextBox x:Name="X0"
+                    <Button x:Name="Backk" Content="&#706;&#706;" Width="33"
+                            FontSize="13"  Margin="20, 5, 5, 5"
+                            Style="{StaticResource StyleBtn}"
+                            FontFamily="Century Gothic" 
+                            Click="Backk_Click"/>
+
+                    <Button x:Name="Next" Content="&#707;&#707;"
+                             Width="33" Margin="5, 5, 20, 5"
+                             FontSize="13"
+                             Style="{StaticResource StyleBtn}"
+                             FontFamily="Century Gothic"
+                            Click="Next_Click"/>
+
+                    <TextBlock Text="Практическая работа №3" FontSize="25"
+                            FontFamily="Century Gothic" Margin="5"/>
+
+                </StackPanel>
+
+                <Separator Background="#3A2D3A"></Separator>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center" Margin="210,25,210,0" > 
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Margin="4" Width="277">
+
+                    <TextBlock Text="X0 = "
+                               Margin="4, 10, 10, 0" 
+                               FontFamily="Century Gothic"/>
+
+                    <TextBox x:Name="X0"
+                                Height="20" Width="130" Margin="10"
+                                FontSize="13" FontFamily="Century Gothic"
+                                BorderThickness="2"
+                                BorderBrush="#3A2D3A"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Margin="4" Width="277">
+
+                    <TextBlock Text="Xk = "
+                               Margin="4, 10, 10, 0" 
+                               FontFamily="Century Gothic"/>
+
+                    <TextBox x:Name="Xk"
                             Height="20" Width="130" Margin="10"
                             FontSize="13" FontFamily="Century Gothic"
                             BorderThickness="2"
                             BorderBrush="#3A2D3A"/>
-            </StackPanel>
 
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Left"
-                        Margin="4" Width="277">
+                </StackPanel>
 
-                <TextBlock Text="Xk = "
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Margin="4" Width="277">
+
+                    <TextBlock Text="Dx = "
+                               Margin="4, 10, 10, 0" 
+                               FontFamily="Century Gothic"/>
+
+                    <TextBox x:Name="Dx"
+                             Height="20" Margin="10" Width="130"
+                             FontSize="13" FontFamily="Century Gothic"
+                             BorderThickness="2"
+                             BorderBrush="#3A2D3A"/>
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Margin="4" Width="277">
+
+                    <TextBlock Text="A =   "
                            Margin="4, 10, 10, 0" 
-                           FontFamily="Century Gothic"/>
+                           FontFamily="Century Gothic"/>    
 
-                <TextBox x:Name="Xk"
-                        Height="20" Width="130" Margin="10"
-                        FontSize="13" FontFamily="Century Gothic"
-                        BorderThickness="2"
-                        BorderBrush="#3A2D3A"/>
+                    <TextBox x:Name="A"
+                             Height="20" Margin="10" Width="130"
+                             FontSize="13" FontFamily="Century Gothic"
+                             BorderThickness="2"
+                             BorderBrush="#3A2D3A" RenderTransformOrigin="0.897,0.419"/>
 
-            </StackPanel>
+                </StackPanel>
 
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Left"
-                        Margin="4" Width="277">
-
-                <TextBlock Text="Dx = "
-                           Margin="4, 10, 10, 0" 
-                           FontFamily="Century Gothic"/>
-
-                <TextBox x:Name="Dx"
-                         Height="20" Margin="10" Width="130"
-                         FontSize="13" FontFamily="Century Gothic"
-                         BorderThickness="2"
-                         BorderBrush="#3A2D3A"/>
-
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Left"
-                        Margin="4" Width="277">
-
-                <TextBlock Text="A =   "
-                       Margin="4, 10, 10, 0" 
-                       FontFamily="Century Gothic"/>    
-
-                <TextBox x:Name="A"
-                         Height="20" Margin="10" Width="130"
-                         FontSize="13" FontFamily="Century Gothic"
-                         BorderThickness="2"
-                         BorderBrush="#3A2D3A" RenderTransformOrigin="0.897,0.419"/>
-
-            </StackPanel>
-
-            <StackPanel Orientation="Vertical"
-                        HorizontalAlignment="Left" 
-                        VerticalAlignment="Center">
+                <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Center">
               
-                <ListBox Name="lstResult" Margin="11" Width="360"
-                         Height="200" 
-                         FontFamily="Century Gothic"/>
-            </StackPanel>
+                    <ListBox Name="lstResult" Margin="11" Width="360"
+                             Height="100" 
+                             FontFamily="Century Gothic"/>
+                </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
-                <Button x:Name="Backk" Content="&#706;&#706;" Width="33"
-                        FontSize="13"  Margin="5"
-                        Style="{StaticResource StyleBtn}"
-                        FontFamily="Century Gothic" 
-                        Click="Backk_Click"/>
 
-                <Button x:Name="Play" FontSize="13"
-                        Style="{StaticResource StyleBtn}"
-                        Content="Вычислить" Margin="5" 
-                        FontFamily="Century Gothic"
-                        Click="Play_Click"/>
+                    <Button x:Name="Play" FontSize="13"
+                            Style="{StaticResource StyleBtn}"
+                            Content="Вычислить" Margin="5" 
+                            FontFamily="Century Gothic"
+                            Click="Play_Click"/>
 
-                <Button Name="btnClear" FontSize="13"
-                        Content="Очистить" Margin="5"
-                        Style="{StaticResource StyleBtn}"
-                        FontFamily="Century Gothic"
-                        Click="btnClear_Click"/>
+                    <Button Name="btnClear" FontSize="13"
+                            Content="Очистить" Margin="5"
+                            Style="{StaticResource StyleBtn}"
+                            FontFamily="Century Gothic"
+                            Click="btnClear_Click"/>
 
-                <Button x:Name="Next" Content="&#707;&#707;"
-                         Width="33" Margin="5"
-                         FontSize="13"
-                         Style="{StaticResource StyleBtn}"
-                         FontFamily="Century Gothic"
-                        Click="Next_Click"/>  
+                </StackPanel>
+
+
 
             </StackPanel>
-
-
-
         </StackPanel>
-
     </Grid>
 </Page>

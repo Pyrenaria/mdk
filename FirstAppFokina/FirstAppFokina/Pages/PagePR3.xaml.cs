@@ -42,7 +42,7 @@ namespace FirstAppFokina.Pages
             
            
 
-            double u;
+           
             lstResult.Items.Add("Лаб.раб.№2. Выполнила Ст.гр.ИСП212 Фокина Е.И. Вариант 7");
            
 
@@ -70,7 +70,7 @@ namespace FirstAppFokina.Pages
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-
+            Classes.ClassFrame.frmObj.Navigate(new PagePR7());
         }
     }
 }
