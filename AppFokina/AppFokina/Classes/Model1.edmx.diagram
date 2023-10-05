@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb4073a533af4287b2e7fb9e5c4b8184" Name="Diagram1">
+        <EntityTypeShape EntityType="mdkModel.Измерение" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mdkModel.Категория" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mdkModel.Кулинария" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="mdkModel.FK_Кулинария_Измерение" ManuallyRouted="false" />
+        <AssociationConnector Association="mdkModel.FK_Кулинария_Категория" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

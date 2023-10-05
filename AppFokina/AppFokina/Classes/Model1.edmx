@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище mdkModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Измерение">
+          <Key>
+            <PropertyRef Name="ID Единиц" />
+          </Key>
+          <Property Name="ID Единиц" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Единица измерения" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Категория">
+          <Key>
+            <PropertyRef Name="ID Категории" />
+          </Key>
+          <Property Name="ID Категории" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Название категории" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Кулинария">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Название Блюда" Type="varchar" MaxLength="50" />
+          <Property Name="ID Категории" Type="int" />
+          <Property Name="Рецепт" Type="text" />
+          <Property Name="Вес" Type="int" />
+          <Property Name="Продукты" Type="text" />
+          <Property Name="Калорийность" Type="int" />
+          <Property Name="Цена" Type="int" />
+          <Property Name="ID Единиц" Type="int" />
+        </EntityType>
+        <Association Name="FK_Кулинария_Измерение">
+          <End Role="Измерение" Type="Self.Измерение" Multiplicity="0..1" />
+          <End Role="Кулинария" Type="Self.Кулинария" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Измерение">
+              <PropertyRef Name="ID Единиц" />
+            </Principal>
+            <Dependent Role="Кулинария">
+              <PropertyRef Name="ID Единиц" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Кулинария_Категория">
+          <End Role="Категория" Type="Self.Категория" Multiplicity="0..1" />
+          <End Role="Кулинария" Type="Self.Кулинария" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Категория">
+              <PropertyRef Name="ID Категории" />
+            </Principal>
+            <Dependent Role="Кулинария">
+              <PropertyRef Name="ID Категории" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="Хранилище mdkModelContainer">
+          <EntitySet Name="Измерение" EntityType="Self.Измерение" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Категория" EntityType="Self.Категория" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Кулинария" EntityType="Self.Кулинария" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Кулинария_Измерение" Association="Self.FK_Кулинария_Измерение">
+            <End Role="Измерение" EntitySet="Измерение" />
+            <End Role="Кулинария" EntitySet="Кулинария" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Кулинария_Категория" Association="Self.FK_Кулинария_Категория">
+            <End Role="Категория" EntitySet="Категория" />
+            <End Role="Кулинария" EntitySet="Кулинария" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mdkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Измерение">
+          <Key>
+            <PropertyRef Name="ID_Единиц" />
+          </Key>
+          <Property Name="ID_Единиц" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Единица_измерения" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Кулинария" Relationship="Self.FK_Кулинария_Измерение" FromRole="Измерение" ToRole="Кулинария" />
+        </EntityType>
+        <EntityType Name="Категория">
+          <Key>
+            <PropertyRef Name="ID_Категории" />
+          </Key>
+          <Property Name="ID_Категории" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Название_категории" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Кулинария" Relationship="Self.FK_Кулинария_Категория" FromRole="Категория" ToRole="Кулинария" />
+        </EntityType>
+        <EntityType Name="Кулинария">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Название_Блюда" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Категории" Type="Int32" />
+          <Property Name="Рецепт" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Вес" Type="Int32" />
+          <Property Name="Продукты" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Калорийность" Type="Int32" />
+          <Property Name="Цена" Type="Int32" />
+          <Property Name="ID_Единиц" Type="Int32" />
+          <NavigationProperty Name="Измерение" Relationship="Self.FK_Кулинария_Измерение" FromRole="Кулинария" ToRole="Измерение" />
+          <NavigationProperty Name="Категория" Relationship="Self.FK_Кулинария_Категория" FromRole="Кулинария" ToRole="Категория" />
+        </EntityType>
+        <Association Name="FK_Кулинария_Измерение">
+          <End Role="Измерение" Type="Self.Измерение" Multiplicity="0..1" />
+          <End Role="Кулинария" Type="Self.Кулинария" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Измерение">
+              <PropertyRef Name="ID_Единиц" />
+            </Principal>
+            <Dependent Role="Кулинария">
+              <PropertyRef Name="ID_Единиц" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Кулинария_Категория">
+          <End Role="Категория" Type="Self.Категория" Multiplicity="0..1" />
+          <End Role="Кулинария" Type="Self.Кулинария" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Категория">
+              <PropertyRef Name="ID_Категории" />
+            </Principal>
+            <Dependent Role="Кулинария">
+              <PropertyRef Name="ID_Категории" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mdkEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Измерение" EntityType="Self.Измерение" />
+          <EntitySet Name="Категория" EntityType="Self.Категория" />
+          <EntitySet Name="Кулинария" EntityType="Self.Кулинария" />
+          <AssociationSet Name="FK_Кулинария_Измерение" Association="Self.FK_Кулинария_Измерение">
+            <End Role="Измерение" EntitySet="Измерение" />
+            <End Role="Кулинария" EntitySet="Кулинария" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Кулинария_Категория" Association="Self.FK_Кулинария_Категория">
+            <End Role="Категория" EntitySet="Категория" />
+            <End Role="Кулинария" EntitySet="Кулинария" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(mdkModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(mdkModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище mdkModelContainer" CdmEntityContainer="mdkEntities">
+          <EntitySetMapping Name="Измерение">
+            <EntityTypeMapping TypeName="mdkModel.Измерение">
+              <MappingFragment StoreEntitySet="Измерение">
+                <ScalarProperty Name="ID_Единиц" ColumnName="ID Единиц" />
+                <ScalarProperty Name="Единица_измерения" ColumnName="Единица измерения" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Категория">
+            <EntityTypeMapping TypeName="mdkModel.Категория">
+              <MappingFragment StoreEntitySet="Категория">
+                <ScalarProperty Name="ID_Категории" ColumnName="ID Категории" />
+                <ScalarProperty Name="Название_категории" ColumnName="Название категории" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Кулинария">
+            <EntityTypeMapping TypeName="mdkModel.Кулинария">
+              <MappingFragment StoreEntitySet="Кулинария">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Название_Блюда" ColumnName="Название Блюда" />
+                <ScalarProperty Name="ID_Категории" ColumnName="ID Категории" />
+                <ScalarProperty Name="Рецепт" ColumnName="Рецепт" />
+                <ScalarProperty Name="Вес" ColumnName="Вес" />
+                <ScalarProperty Name="Продукты" ColumnName="Продукты" />
+                <ScalarProperty Name="Калорийность" ColumnName="Калорийность" />
+                <ScalarProperty Name="Цена" ColumnName="Цена" />
+                <ScalarProperty Name="ID_Единиц" ColumnName="ID Единиц" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище mdkModel.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище mdkModel.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище mdkModel.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище mdkModel.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="mdkModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище mdkModel.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="mdkModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище mdkModel.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище mdkModel.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
